@@ -89,7 +89,7 @@ export function VersesPage() {
       </div>
 
       {/* Verse Card Centered */}
-      <div className="flex justify-center items-center min-h-[calc(100dvh-20rem)] px-8 border border-red-500">
+      <div className="flex justify-center items-center min-h-[calc(100dvh-20rem)] px-8">
         {randomVerse ? (
           <div ref={verseCardRef}>
             <VerseCard verse={randomVerse} color={moodColor} />
