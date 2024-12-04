@@ -73,7 +73,7 @@ export function VersesPage() {
   }, [verses, randomVerse]);
 
   return (
-    <div className="max-h-dvh bg-gray-50">
+    <div className="max-h-[80vh] bg-gray-50">
       {/* Navigation and Page Header */}
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
