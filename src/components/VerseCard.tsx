@@ -20,7 +20,7 @@ export function VerseCard({ verse, color }: VerseCardProps) {
 
   return (
     <div
-      className={`rounded-lg shadow-lg p-6 space-y-4 max-w-lg w-full`}
+      className={`rounded-lg shadow-lg p-6 space-y-4 max-w-[800px] w-full`}
       style={{
         backgroundColor: color,
         boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.2)",
