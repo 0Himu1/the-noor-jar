@@ -73,7 +73,7 @@ export function VersesPage() {
   }, [verses, randomVerse]);
 
   return (
-    <div className="max-h-[80vh] bg-gray-50">
+    <div className="min-h-dvh bg-gray-50">
       {/* Navigation and Page Header */}
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
@@ -89,7 +89,7 @@ export function VersesPage() {
       </div>
 
       {/* Verse Card Centered */}
-      <div className="flex justify-center items-center min-h-[calc(100vh-15rem)] px-8">
+      <div className="flex justify-center items-center min-h-[calc(100dvh-20rem)] px-8 border border-red-500">
         {randomVerse ? (
           <div ref={verseCardRef}>
             <VerseCard verse={randomVerse} color={moodColor} />
