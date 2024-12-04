@@ -1,5 +1,6 @@
-import { moods } from '../data/moods';
-import { MoodCard } from '../components/MoodCard';
+import { moods } from "../data/moods";
+import { MoodCard } from "../components/MoodCard";
+import { Analytics } from "@vercel/analytics/react";
 
 export function HomePage() {
   return (
@@ -15,6 +16,7 @@ export function HomePage() {
           ))}
         </div>
       </div>
+      <Analytics />
     </div>
   );
 }
