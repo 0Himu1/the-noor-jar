@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import type { CSSProperties } from 'react';
 import { 
   Heart,
   Cloud,
@@ -6,7 +7,8 @@ import {
   Frown,
   Shield,
   Star,
-  Leaf
+  Leaf,
+  ArrowUpRight
 } from 'lucide-react';
 import type { Mood } from '../types';
 
@@ -25,19 +27,22 @@ interface MoodCardProps {
 }
 
 export function MoodCard({ mood }: MoodCardProps) {
-  const navigate = useNavigate();
   const Icon = iconMap[mood.icon as keyof typeof iconMap];
+  const descriptions: Record<string, string> = {
+    Happy: 'Carry the joy with you', Sad: 'A little comfort for your heart', Angry: 'Make room for stillness',
+    Depressed: 'Find a moment of hope', 'Seeking Protection': 'Turn toward reassurance', Thankful: 'Pause in gratitude',
+    'Seeking Barkat': 'Welcome blessings into your day', 'Seeking Health': 'A moment for healing and dua',
+  };
 
   return (
-    <button
-      onClick={() => navigate(`/verses/${mood.name}`)}
-      className="p-6 rounded-lg shadow-lg transition-transform hover:scale-105"
-      style={{ backgroundColor: mood.color }}
+    <Link
+      to={`/verses/${encodeURIComponent(mood.name)}`}
+      className="mood-card"
+      aria-label={mood.name}
+      style={{ '--mood': mood.color } as CSSProperties}
     >
-      <div className="flex flex-col items-center space-y-2">
-        <Icon className="w-8 h-8 text-white" />
-        <span className="text-lg font-medium text-white">{mood.name}</span>
-      </div>
-    </button>
+      <div className="mood-card-top"><span className="mood-icon"><Icon size={23} strokeWidth={1.5} aria-hidden="true" /></span><ArrowUpRight className="mood-arrow" size={18} aria-hidden="true" /></div>
+      <h3>{mood.name}</h3><p>{descriptions[mood.name]}</p>
+    </Link>
   );
 }

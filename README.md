@@ -4,6 +4,10 @@ The Noor Jar is a personalized Quranic verse app designed to provide spiritual g
 
 ## **Features**
 
+- **Adaptive full-screen layout**: Mood selection and reading screens fit the current viewport without page scrolling. Verse typography is measured and resized to keep the complete Arabic and translation on one page, including long paragraphs.
+- **System, light, and dark themes**: System is the default. A chosen override persists locally; system mode follows OS theme changes.
+- **Purposeful GSAP motion**: A quiet opening sequence and brief verse transitions respect reduced-motion preferences. Background views skip unnecessary animation.
+
 - **Mood-Based Verse Selection**: Choose from moods like Happy, Sad, Thankful, and more to get a Quranic verse tailored to your feelings.
 - **Beautiful Verse Display**: Verses are displayed on elegant cards with mood-specific colors.
 - **Random Verse Refresh**: Click the refresh button to view a new random verse within the same mood.
